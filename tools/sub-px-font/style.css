@@ -1,0 +1,39 @@
+*{
+    margin: 1vmin;
+    padding: 0;
+    border: 0;
+}
+body {
+    background-color: black;
+    text-align: center;
+}
+#gen-text
+{
+    display: block;
+    width: 90vw;
+    height: 40vh;
+    margin: 0 auto;
+    border: 1px solid white;
+    text-align: left;
+    padding: 1vw;
+    line-height: 7px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+#gen-text>*
+{
+    margin: 1px;
+}
+#text-field
+{
+    color: white;
+    background-color: #111;
+    border: 1px solid white;
+    width: 90vw;
+    height: 40vh;
+    padding: 1vmin;
+}
+#gen-btn {
+    width: 50vw;
+    height: 6vh;
+}

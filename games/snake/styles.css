@@ -1,0 +1,36 @@
+noscript {
+    color: red;
+}
+
+body {
+    text-align: center;
+    background: url("bg.webp"), #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+canvas {
+    background-color: #000A;
+    width: 80vh;
+    height: 80vh;
+    image-rendering: optimizeSpeed;
+    border: 1px solid white;
+}
+
+p, h1, h2, h3{
+    color: white;
+}
+
+input{
+    width: 100px;
+}
+
+.hidden{
+    display: none;
+}
+
+div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,64 @@
+input {
+    background-color: transparent;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    color: #DDD;
+}
+
+input[type="number"] {
+    font-size: 100%;
+    width: 5ch;
+}
+
+#trackselector > div {
+    user-select: none;
+    padding-top: 2.5vh;
+    border: 3px solid;
+    text-align: center;
+    background-color: transparent;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    color: #DDD;
+    margin-top: 3%;
+    height: 7vh;
+    background-size: 100% 10%;
+    background-repeat: repeat-y;
+    font-size: 2vw;
+    background-color: #0008;
+}
+
+button, #trackselector > div {
+    background-color: transparent;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    color: #DDD;
+}
+
+button:hover, #trackselector > div:hover {
+    background-image: linear-gradient(#0000, #a905, #0000);
+}
+
+button:active, #trackselector > div:active {
+    background-image: linear-gradient(#0000, #a908, #0000);
+}
+
+#cupselector > button {
+    min-width: 10%;
+    max-width: 15%;
+    flex-shrink: 1;
+    color: #a90;
+    background-size: 100% 5%;
+    background-repeat: repeat-y;
+}
+
+#cupselector > button > pre {
+    font-size: 5vw;
+}
+
+#cupselector > button:hover {
+    background-image: linear-gradient(#0000, #a905, #0000);
+}
+
+#cupselector > button:active {
+    background-image: linear-gradient(#0000, #a908, #0000);
+}

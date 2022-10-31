@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "SuperMario256";
+    src: url('SuperMario256.ttf');
+}
+
+#mobilewarning {
+    display: none;
+}
+
+@media handheld {
+    #mobilewarning {
+        display: block;
+        color: red;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #mobilewarning {
+        display: block;
+        color: red;
+    }
+}
+
+body {
+    background-color: #111;
+    background-image: url("../img/ui/bg.png");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    min-height: 95vh;
+}
+
+h1, h2, h3, p, span, li, a, noscript, div {
+    font-family: "SuperMario256";
+    color: #DDD;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+pre {
+    word-wrap: none;
+}
+
+a {
+    color: #a90;
+}
+
+#settingspanel, #cuptrackdiv {
+    display: inline-block;
+    max-width: 100%;
+    min-width: 45%;
+    width: 300px;
+    vertical-align: top;
+}
+
+#settingspanel {
+    background: #0008;
+    height: 70vh;
+    padding: 1%;
+    padding-top: 0.1%;
+    padding-right: 5%;
+}
+
+#cupselector, #trackselector {
+    display: flex;
+    min-width: 100%;
+    height: 100%;
+}
+
+#trackselector {
+    flex-direction: column;
+}
+
+embed {
+    height: 50vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: 3px dashed #a90;
+    overflow:auto;
+}
+
+#tracklistdiv {
+    width: 100%;
+    height: 20vh;
+    background-color: transparent;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    overflow:auto;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #a90 #0000;
+}
+
+#tracklistdiv::-webkit-scrollbar {
+    width: 11px;
+}
+#tracklistdiv::-webkit-scrollbar-track {
+    background: #0000;
+}
+#tracklistdiv::-webkit-scrollbar-thumb {
+    background-color: #a90;
+    border-radius: 6px;
+    border: 3px solid #0000;
+}
+
+#tracklistdiv > ul{
+    list-style: none;
+    padding: 0;
+    min-height: 100%;
+    margin: 0;
+}
+
+#tracklistdiv > ul > li{
+    font-family: Arial;
+    border: 1.5px solid;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    padding: 1%;
+    font-size: 100%;
+    margin-top: 1%;
+}
+
+#tracklistdiv > ul > li:hover {
+    background-image: linear-gradient(#0000, #a905, #0000);
+}
+
+#tracklistdiv > ul > li:active {
+    background-image: linear-gradient(#0000, #a908, #0000);
+}

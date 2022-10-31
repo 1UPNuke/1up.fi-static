@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-CUP Sorter</title>
+    <script src="scripts/tracknames.js"></script>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cuplist.css">
+    <link rel="stylesheet" href="styles/inputs.css">
+    <meta property="og:title" content="1-CUP Sorter">
+    <meta property="og:image" content="https://1up.fi/media/images/ogimage.webp">
+    <meta property="og:image:secure_url" content="https://1up.fi/media/images/ogimage.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Tool to sort CTGP's cuplayout.cup file!">
+    <meta name="theme-color" content="#FFFF55">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <noscript>
+        <style>
+            body {background-image: none;}
+            body > * {display:none !important;}
+            body > span {display:block !important; color: red; font-size: 200%;}
+        </style>
+    </noscript>
+</head>
+<body>
+    <h1>1-CUP Sorter</h1>
+    <a target="_blank" href="https://github.com/1UPNuke/1-cup-sorter">Link to GitHub source code!</a><br>
+    <h1 id="mobilewarning">This site does not function on mobile devices, sorry!</h1>
+    <noscript>This tool requires javascript to function, please enable it in your browser!</noscript> 
+    <div id="settingspanel">
+        <h3>File: <input type="file" onchange="loadFile(this.files[0]);"> <button onclick="saveFile();">Save file</button></h3>
+        <h3>Cups: <input type="number" id="cupinput" onchange="cups=this.value; changeOffset(-100);" placeholder="54" min="1" max="54"></h3>
+        <h3>Sort:
+            <button onclick="sortAllABC();">All by ABC</button>
+            <button onclick="sortAllID();">All by ID</button>
+            <button onclick="sortCupsABC();">Cups by ABC</button>
+            <button onclick="sortCupsID();">Cups by ID</button>
+        </h3>
+        <div id="tracklistdiv">
+            <ul id="tracklist"></ul>
+        </div><br>
+        <a target="_blank" id="wikilink" href="https://wiki.tockdom.com/wiki/">Link to Custom Mario Kart Wiiki</a><br>
+	<pre style="color: red;">Preview broken until wiiki supports HTTPS, click the link or download from GitHub</pre>
+        <embed src="placeholder.html" id="wikipreview" type="text/html">
+    </div>
+    <div id ="cuptrackdiv">
+        <div id="cupselector">
+            <button onclick="changeOffset(-1)"><pre>&lt;</pre></button>
+            <div id="cuplist"></div>
+            <button onclick="changeOffset(1)"><pre>&gt;</pre></button>
+        </div><br>
+        <div id="trackselector">
+        </div>
+    </div>
+</body>
+</html>

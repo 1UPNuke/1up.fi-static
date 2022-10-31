@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/main.css">
+
+        <script src="https://kit.fontawesome.com/d160281f0a.js" crossorigin="anonymous"></script>
+
+        <title>1UP.fi - Dice Gen</title>
+        <meta name="description" content="Generate dice to embed on websites!">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta property="og:title" content="1UP.fi - Dice Gen">
+        <meta property="og:image" content="https://1up.fi/media/images/ogimage.webp">
+        <meta property="og:image:secure_url" content="https://1up.fi/media/images/ogimage.webp">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Generate dice to embed on websites!">
+
+        <meta name="theme-color" content="#FFFF55">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <script src="generate.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="page-container">
+            <header>
+                <div class="header-left">
+                    <a href="/"><h1 style="font-size: 3vmax;"><img src="/media/images/ogimage.webp" alt="Header Logo" style="width: 7vh;"> 1UP.fi </h1></a>
+                </div>
+                <div class="header-right">
+                    <a title="Home" class="btn btn-outline-dark btn-lg" href="/"><i class="fas fa-home"></i></a>
+                    <a title="About" class="btn btn-outline-dark btn-lg" href="/about"><i class="fas fa-info"></i></a>
+                    <a title="Games" class="btn btn-outline-dark btn-lg" href="/games"><i class="fas fa-gamepad"></i></a>
+                </div>
+            </header>
+
+            <main>
+                <div id="main">
+                        <h1>Dice Gen</h1>
+                        <hr>
+                        <h2>Generate dice to embed on websites!</h2>
+                        <div id="dicediv">
+                            <script id="dice" src="//1up.fi/tools/dice/embed.js" type="module"></script><br>
+                        </div>
+                        <p>Add this on your site: <code id="embed" style="background-color: black;">&lt;script src='//1up.fi/tools/dice/embed.js' type='module'>&lt;/script></code></p>
+                        <p>bg: <input type="color" id="bg"  value="#F0F0F0">
+                        pip: <input type="color" id="pip" value="#202020"></p>
+                        <p>shading (0-1): <input type="number" id="shading" min="0" max="1" placeholder="0.5">
+                        width (px): <input type="number" id="width" placeholder="100">
+                        height (px): <input type="number" id="height" placeholder="100"></p>
+                        <p>Custom CSS: <input type="textarea" id="css" style="width: 80%;" placeholder="css-property: value;"></p>
+                        <button type="button" class="btn btn-outline-warning btn-lg" onclick="generate()">Generate!</button>
+                </div>
+            </main>
+
+            <footer>
+                <!--<a href="#top" style="color: white;">Back to top.</a>-->
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+#cuplist {
+    flex-grow: 1;
+    margin: 0;
+    flex: 10;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    min-height: 20em;
+    max-height: 40vh;
+}
+
+#cuplist::before, #cuplist::after {
+    content: '';
+    height: 100%;
+    order: 1;
+}
+#cuplist>button:nth-child(n + 3) {
+    order: 1;
+}
+#cuplist>button:nth-child(n + 5) {
+    order: 2;
+}
+
+#cuplist > button {
+    flex-shrink: 1;
+    margin: 3em;
+    min-width: 20%;
+    min-height: 5em;
+    position: relative;
+    border: 0.3em solid;
+    display: inline-block;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(#fff 70%, #a90, #860);
+    background-color: #0000;
+    background-size: 100% 20%;
+    background-repeat: repeat-y;
+}
+
+#cuplist > button:hover, #cuplist > button:active {
+    background-image: linear-gradient(#0000, #a905, #0000);
+}
+
+#cuplist > button:active {
+    background-image: linear-gradient(#0000, #a908, #0000);
+}
+
+#cuplist > .selected {
+    background-image: linear-gradient(#0000, #a908, #0000);
+}
+
+#cuplist > button > img {
+    width: 80%;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    user-select: none;
+}

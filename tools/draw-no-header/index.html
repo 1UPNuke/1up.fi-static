@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>1UP.fi - DrawUP</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <script src="script.js"></script>
+
+        <script src="https://kit.fontawesome.com/d160281f0a.js" crossorigin="anonymous"></script>
+
+        <meta name="description" content="DrawUP: Simple Online Drawing Tool">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta property="og:title" content="1UP.fi - DrawUP">
+        <meta property="og:image" content="https://1up.fi/media/images/ogimage.webp">
+        <meta property="og:image:secure_url" content="https://1up.fi/media/images/ogimage.webp">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="DrawUP: Simple Online Drawing Tool">
+
+        <meta name="theme-color" content="#FFFF55">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+    </head>
+    <noscript>Turn on javascript!</noscript>
+    <body onload="init()">
+        <div id="UI">
+            <input type="color" id="color" value="#000000"> <input type="color" id="bg" value="#ffffff">
+            <input type="number" id="size" style="width: 50px" value="10" min="1">
+
+            <div class="btn-group">
+                <label class="btn btn-secondary btn-sm">
+                    <input type="radio" name="pen" id="pen" checked> <i class="fas fa-pen"></i>
+                </label>
+                <label class="btn btn-secondary btn-sm">
+                    <input type="radio" name="pen" id="eraser"> <i class="fas fa-eraser"></i>
+                </label>
+            </div>
+            <div class="btn-group">
+                <label class="btn btn-secondary btn-sm">
+                    <a id="clear"><i class="fas fa-trash-alt"></i></a>
+                </label>
+                <label class="btn btn-secondary btn-sm">
+                    <a id="save"><i class="fas fa-save"></i></a>
+                </label>
+            </div>
+            <label class="btn btn-secondary btn-sm">
+                <a onclick="getEl('shortcuts').classList.toggle('hidden')">Shortcuts</a>
+            </label>
+            <p class="hidden" id="shortcuts">
+Arrow Up/Down = Change size
+U = Toggle UI
+P = Pen
+E = Eraser
+C = Clear
+S = Save
+H = Pen color
+B = BG Color
+            </p>
+        </div>
+        <canvas id="canvas" width="500" height="500" style="background-color:white;" tabindex="1">
+            Canvas is not supported!
+        </canvas>
+        <a id="link" style="display: none;"></a>
+    </body>
+</html>

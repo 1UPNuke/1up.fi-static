@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia-UP</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/trivia.css">
+</head>
+<body>
+    <h1>Trivia-UP!</h1>
+    <form id="triviaForm" onsubmit="return false">
+    <fieldset>
+        <label for="categories">Category:</label>
+        <select id="categories"><option value="all">All</option></select>
+        <p id="score">Score: 0</p>
+        <div id="hearts"><img src="img/heart.png" height="20px"></div>
+    </fieldset>
+    <fieldset>
+        <h2 id="question">Are you ready to start the game?</h2>
+        <div id="answers">
+            <input onchange="ansChange();" type="radio" id="ans1" name="ans" value="1">
+            <label for="ans1">Yes</label><br>
+            <input onchange="ansChange();" type="radio" id="ans2" name="ans" value="2">
+            <label for="ans2">Absolutely</label><br>
+            <input onchange="ansChange();" type="radio" id="ans3" name="ans" value="3">
+            <label for="ans3">Totally</label><br>
+            <input onchange="ansChange();" type="radio" id="ans4" name="ans" value="4">
+            <label for="ans4">Yup</label><br>
+        </div>
+        <br><br>
+        <button disabled id="ansBtn" onclick="handleButton()">Start the game</button>
+        <p id="result"></p>
+    </fieldset>
+    </form><br>
+    <p>This site uses the <a href="https://opentdb.com/">Open Trivia Database</a> API by <a href="https://www.pixeltailgames.com/">PIXELTAIL GAMES LLC</a>.</p>
+    <br><image src="img/license.png"></image>
+</body>
+</html>

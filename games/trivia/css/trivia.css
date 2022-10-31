@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFF55;
+}
+
+p, label {
+    color: #CCCCCC;
+    font-weight: 300;
+    font-family: 'Teko', sans-serif;
+}
+
+a {
+    color: yellow;
+    font-weight: 300;
+    font-family: 'Teko', sans-serif;
+}
+
+a:visited {
+    color: yellowgreen;
+}
+
+a:hover, a:active {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+hr {
+    border: 1px solid #666;
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+    background-color: #202020;
+}
+
+#page-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    display: inline;
+}
+div{
+    display: inline-block
+}
+
+input, select, option{
+    background-color: #202020;
+    color: white;
+}
+
+input:read-only{
+    background-color: #101010;
+    border: none;
+}
+
+button{
+    background-color: #303030;
+    color: #FFFF55;
+    border: 1px solid #FFFF55;
+}
+
+fieldset{
+    border: 1px solid #FFFF55;
+}
+
+#categories, #score{
+    margin-right: 20px;
+}

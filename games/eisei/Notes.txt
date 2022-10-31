@@ -1,0 +1,10 @@
+Colors:
+P1:
+	Fill: #ff99ff
+	Border: #ff00ff
+P2:
+	Fill: #99eeff
+	Border: #99ffff
+Text:
+	Fill: #ffffff
+	Border: #334466

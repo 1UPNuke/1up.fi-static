@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Eisei</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="A free-to-play chess-like board game where you control satellites!">
+        <meta name="keywords" content="eisei, chess, boardgame, javascript, js, satellite, satellites">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="1-UP Nuke">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script src="scripts/game.js"></script>
+    </head>
+    <body>
+        <div id="bg">
+            <noscript><p class="noscript">Your browser doesn't support javascript or you need to enable it</p></noscript>
+            <div id="mainmenu" align="center" class="">
+                <img src="sprites/logo.svg" alt="Eisei Logo" class="big-logo"><br>
+                <button class="start-btn" onclick="start()">START</button><br>
+                <button class="rules-btn" onclick="rules()">RULES</button><br>
+            </div>
+            <div id="rules" align="center" class="hidden">
+                    <img src="sprites/logo.svg" alt="Eisei Logo" class="small-logo"><br>
+
+                    <h1 class="rules-text">EISEI RULES:</h1>
+
+                    <p class="rules-text">Players take turn moving their own <span class = "highlight-text">SATELLITES</span> (pieces).</p>
+                    
+                    <p class="rules-text">The goal of the game is to <span class = "highlight-text">CAPTURE</span> all the enemy satellites.</p>
+                    
+                    <p class="rules-text">Each satellite can move one space either <span class = "highlight-text">DIAGONALLY</span> or <span class = "highlight-text">HORIZONTALLY AND VERTICALLY</span> based on their <span class="highlight-text">ORIENTATION</span>.</p>
+                    
+                    <h2 class="rules-text">MOVES:</h2>
+                    
+                    <p class="rules-text"><b>RELOCATION:   </b> <span class = "highlight-text">MOVE</span> your satellite and <span class = "highlight-text">ROTATE</span>.</p>
+                    
+                    <p class="rules-text"><b>TAKEOVER:   </b> <span class = "highlight-text">CAPTURE</span> an enemy satellite by moving onto it.</p>
+                    
+                    <p class="rules-text"><b>RECOURSE:   </b> <span class = "highlight-text">STAY</span> in place and <span class = "highlight-text">ROTATE</span>.</p>
+                    
+                    <p class="rules-text"><b>SWAP:   </b> <span class = "highlight-text">DIFFERENTLY ORIENTED</span> satellites swap places <span class = "highlight-text">WITHOUT ROTATING</span>, satellites with <span class = "highlight-text">SAME ORIENTATION</span> swap places and <span class = "highlight-text">ROTATE</span>.</p>
+
+                    <input type="button" class="btn btn-light btn-lg" value="Main Menu" onclick="mainMenu()">
+            </div>
+            <div id="config" class="hidden">
+                <img src="sprites/logo.svg" alt="Eisei Logo" class="small-logo"><br><br><br><br>
+
+                <p class="config-text">Board Width: 
+                    <span id="width-slider-number">0</span>
+                    <input type="range" min="1" max="6" class="slider" id="width-slider" oninput="updateSliders()" onchange="updateSliders()">
+                </p>
+
+                <p class="config-text">Board Height: 
+                    <span id="height-slider-number">0</span>
+                    <input type="range" min="2" max="7" class="slider" id="height-slider" oninput="updateSliders()" onchange="updateSliders()">
+                </p>
+
+                <p class="config-text"><b>Timer (0=INF):</b>
+                    <input type="number" class="input-number" id="timer" min="0" value=60>s
+                </p>
+
+                <p class="config-text"><b>Player 1 name:</b>
+                    <input id="player-one-name" placeholder="Player 1">
+                </p>
+
+                <p class="config-text"><b>Player 2 name:</b>
+                    <input id="player-two-name" placeholder="Player 2">
+                </p><br>
+
+                <input type="button" class="btn btn-success btn-lg" value="Start Game" onclick="startGame()"> <input type="button" class="btn btn-outline-light" value="Main Menu" onclick="mainMenu()">
+            </div>
+            <div id="game" class="hidden" align="center">
+                <p>Time: <span id="timer-text"></span></p>
+                <table id="board"></table>
+                <div id="victory-message-box" class="hidden" align="center">
+                    <p align="center" id="victory-message">You won!</p><br>
+                    <button class="start-btn" onclick="location.reload();">Main Menu</button>
+                </div>
+            </div>
+        </div>
+        <div id="fullscreen-btn" align="left">
+                <button class="fullscreen-btn" onclick="openFullscreen()">
+                    <img src="sprites/fullscreen.png" align="center" style="width: 100%">
+                </button>
+        </div>
+    </body>
+</html>

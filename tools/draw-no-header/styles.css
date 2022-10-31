@@ -1,0 +1,40 @@
+html, body, footer {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body, canvas {
+    overflow: hidden;
+}
+body{
+    background-color: gray;
+    cursor: crosshair;
+}
+input{
+    margin: 0;
+}
+#UI {
+    z-index: 3;
+    left: 5px;
+    top: 5px;
+    position: absolute;
+    pointer-events: none;
+}
+#UI * {
+    pointer-events: auto;
+}
+p{
+    margin: 0;
+    font-size: 75%;
+    white-space: pre;
+}
+.shortcuts, p{
+    pointer-events: none;
+    width: 0;
+}
+div, label{
+    margin: 0;
+}
+.hidden, .hidden * {
+    display: none;
+}
