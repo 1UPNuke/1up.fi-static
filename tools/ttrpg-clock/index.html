@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTRPG-Clock</title>
+    <link rel="stylesheet" href="theme.css">
+    <script src="analog.js"></script>
+    <script src="ttrpgtime.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <form name="timeform" onsubmit="event.preventDefault();">
+        <header>
+            <h1>TTRPG-Clock</h1>
+            <time>00:00</time>
+            <p id="date"></p>
+            <br>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </header>
+        <main>
+            <canvas width="512" height="512"></canvas>
+            <fieldset>
+                <h2>Timescale</h2>
+                <div>
+                    <label>
+                        <input id="timescale" type="number" value="1" step="1" maxlength="4">
+                        x realtime
+                    </label>
+                    <p>Suggested:<br>0x, 1x, 2x, 4x, 6x,<br>12x, 15x, 24x, 30x, 60x,<br>3600x</p>
+                </div>
+            </fieldset>
+        
+            <fieldset>
+                <h2>Round</h2>
+                <div>
+                    <button id="combat-round">Combat (+6s)</button>
+                    <button id="dungeon-round">Dungeon (+10m)</button>
+                    <button class="undo">Undo</button>
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <h2>Rest</h2>
+                <div>
+                    <button id="short-rest">Short (+1h)</button>
+                    <button id="long-rest">Long (+8h)</button>
+                    <button class="undo">Undo</button>
+                </div>
+            </fieldset>
+        
+            <fieldset>
+                <h2>Format</h2>
+                <div>
+                    <label>
+                        <input type="radio" id="24h-format" name="timeformat" value="24" checked>
+                        24h
+                    </label>
+                    <label>
+                        <input type="radio" id="12h-format" name="timeformat" value="12">
+                        12h
+                    </label>
+                </div>
+            </fieldset>
+        </main>
+    </form>
+    <div id="ground"></div>
+</body>
+</html>
