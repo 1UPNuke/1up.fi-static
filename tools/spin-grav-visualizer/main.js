@@ -31,46 +31,51 @@ function formatFields() {
 
 function updateCSS() {
     let root = document.querySelector(':root');
-    root.style.setProperty("--rpm", values["w"] / factors["rpm"]);
-    root.style.setProperty("--inner-outer-ratio", 1 - (values["h"] / 0.67) / values["r"])
+    root.style.setProperty("--rpm", values.w / factors["rpm"]);
+    root.style.setProperty("--inner-outer-ratio", 1 - (values.h / 0.67) / values.r);
+
+    let standing = document.getElementById("person-standing");
+    let floating = document.getElementById("person-floating");
+    standing.classList.toggle("hidden", values.w === 0);
+    floating.classList.toggle("hidden", values.w > 0);
 }
 
 function updateIcons() {
     let [r, a, w, v, h, d] = Object.values(values);
 
     if (r < 4)
-        icons["r"].innerHTML = iconVLo;
+        icons.r.innerHTML = iconVLo;
     else if (r < 12)
-        icons["r"].innerHTML = iconLo;
+        icons.r.innerHTML = iconLo;
     else
-        icons["r"].innerHTML = iconOK;
+        icons.r.innerHTML = iconOK;
 
     let rpm = w * 30 / Math.PI;
     if (rpm <= 2)
-        icons["w"].innerHTML = iconOK;
+        icons.w.innerHTML = iconOK;
     else if (rpm <= 6)
-        icons["w"].innerHTML = iconHi;
+        icons.w.innerHTML = iconHi;
     else
-        icons["w"].innerHTML = iconVHi;
+        icons.w.innerHTML = iconVHi;
 
     if (v < 6)
-        icons["v"].innerHTML = iconVLo;
+        icons.v.innerHTML = iconVLo;
     else if (v < 10)
-        icons["v"].innerHTML = iconLo;
+        icons.v.innerHTML = iconLo;
     else
-        icons["v"].innerHTML = iconOK;
+        icons.v.innerHTML = iconOK;
 
     let ag = a / g;
     if (ag < 0.1)
-        icons["a"].innerHTML = iconVLo;
+        icons.a.innerHTML = iconVLo;
     else if (ag < 0.3)
-        icons["a"].innerHTML = iconLo;
+        icons.a.innerHTML = iconLo;
     else if (ag < 1.1)
-        icons["a"].innerHTML = iconOK;
+        icons.a.innerHTML = iconOK;
     else if (ag < 1.5)
-        icons["a"].innerHTML = iconHi;
+        icons.a.innerHTML = iconHi;
     else
-        icons["a"].innerHTML = iconVHi;
+        icons.a.innerHTML = iconVHi;
 }
 
 function updateFields() {
