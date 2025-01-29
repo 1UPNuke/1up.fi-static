@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Gravity Visualizer</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <svg class="hidden" width="0" height="0" viewBox="0 0 0 0">
+        <defs>
+            <polygon id="tri-up-fill" points="0,1 1,1 0.5,0" fill="red"/>
+            <polygon id="tri-up" points="0,1 1,1 0.5,0" stroke-width="0.4" stroke="#f88"/>
+            <circle id="circle" cx="0.5" cy="0.5" r="0.5" fill="white"/>
+        </defs>
+    </svg>
+    <main>
+        <div id="ship-container">
+            <div id="ship-outer" class="ring spin">
+                <img src="img/person-standing.svg" class="person" id="person-standing">
+                <div class="bar rot-45"></div>
+                <div class="bar rot-neg-45"></div>
+                <img src="img/person-floating.svg" class="person hidden" id="person-floating">
+                <div id="ship-inner" class="ring"></div>
+            </div>
+        </div>
+        <form>
+            <h1>Spin Gravity Visualizer</h1>
+            <p>
+                Input fields and icons (flipped) based on
+                <a href="https://www.artificial-gravity.com/sw/SpinCalc/SpinCalc.htm">SpinCalc</a>
+                by <a href="http://www.twhall.com/">Theodore W. Hall</a>.<br>
+                Highly recommended that  you check it out for more information on the topic.
+            </p>
+            <h2>Icon Legend</h2>
+            <ul>
+                <li>
+                    <svg id="icon-v-hi" viewBox="0 0 1 1">
+                        <title>Very high</title>
+                        <use href="#tri-up-fill"/>
+                    </svg>
+                    <span>Too high for comfort, requires deliberate adaptation.</span>
+                </li>
+                <li>
+                    <svg id="icon-hi" viewBox="0 0 1 1">
+                        <title>High</title>
+                        <clipPath id="clip-hi"><use href="#tri-up"/></clipPath>
+                        <use clip-path="url(#clip-hi)" href="#tri-up"/>
+                    </svg>
+                    <span>May be too high for comfort, may require adaptation.</span>
+                </li>
+                <li>
+                    <svg id="icon-ok" viewBox="0 0 1 1">
+                        <title>Comfortable</title>
+                        <use href="#circle"/>
+                    </svg>
+                    <span>Comfortable, little or no adaptation.</span>
+                </li>
+                <li>
+                    <svg id="icon-lo" viewBox="0 0 1 1">
+                        <title>Low</title>
+                        <clipPath id="clip-lo"><use href="#tri-up"/></clipPath>
+                        <use clip-path="url(#clip-lo)" href="#tri-up" transform="rotate(180,0.5,0.5)"/>
+                    </svg>
+                    <span>May be too low for comfort, may require adaptation.</span>
+                </li>
+                <li>
+                    <svg id="icon-v-lo" viewBox="0 0 1 1">
+                        <title>Very low</title>
+                        <use href="#tri-up-fill" transform="rotate(180,0.5,0.5)"/>
+                    </svg>
+                    <span>Too low for comfort, requires deliberate adaptation.</span>
+                </li>
+            </ul>
+
+            <div id="field-container">
+                <fieldset>
+                    <legend>Radius (r)</legend>
+                    <svg id="r-icon" viewBox="0 0 1 1">
+                        <use href="#circle"/>
+                    </svg>
+                    <input type="checkbox" name="r-check" id="r-check" checked>
+                    <input type="number" name="r-field" id="r-field" min="0" value="9.80" step="any">
+                    <select name="r-unit" id="r-unit">
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Artificial Gravity (a<sub>g</sub>)</legend>
+                    <svg id="a-icon" viewBox="0 0 1 1">
+                        <use href="#circle"/>
+                    </svg>
+                    <input type="checkbox" name="a-check" id="a-check" checked>
+                    <input type="number" name="a-field" id="a-field" min="0" value="1.00" step="any">
+                    <select name="a-unit" id="a-unit">
+                        <option value="g">g</option>
+                        <option value="mps2">m/s^2</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Angular Velocity (ω)</legend>
+                    <svg id="w-icon" viewBox="0 0 1 1">
+                        <use href="#circle"/>
+                    </svg>
+                    <input type="checkbox" name="w-check" id="w-check">
+                    <input type="number" name="w-field" id="w-field" min="0" step="any">
+                    <select name="w-unit" id="w-unit">
+                        <option value="rpm">RPM</option>
+                        <option value="rad">rad/s</option>
+                        <option value="deg">deg/s</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Tangential Velocity (v<sub>t</sub>)</legend>
+                    <svg id="v-icon" viewBox="0 0 1 1">
+                        <use href="#circle"/>
+                    </svg>
+                    <input type="checkbox" name="v-check" id="v-check">
+                    <input type="number" name="v-field" id="v-field" min="0" step="any">
+                    <select name="v-unit" id="v-unit">
+                        <option value="mps">m/s</option>
+                        <option value="kph">km/h</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Human Height (h)</legend>
+                    <input type="number" name="h-field" id="h-field" min="0" step="any" value="1.7">
+                    <select name="h-unit" id="h-unit">
+                        <option value="m">m</option>
+                        <option value="cm">cm</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Gravity Gradient (Δg)</legend>
+                    <input type="number" name="d-field" id="d-field" min="0" step="any" disabled>
+                    <select name="d-unit" id="d-unit">
+                        <option value="g">g</option>
+                        <option value="mps2">m/s^2</option>
+                    </select>
+                </fieldset>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

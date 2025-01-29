@@ -1,0 +1,6 @@
+:root {
+    --line-thickness: 0.2rem;
+    --inner-outer-ratio: .90;
+    --person-room-ratio: .67;
+    --rpm: 1;
+}
