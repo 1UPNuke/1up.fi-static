@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Dicier;
+    src: url('fonts/Dicier-Round-Heavy.woff2');
+}
+
+@font-feature-values "Dicier" {
+    @character-variant {
+        dicesize: 24;
+    }
+    @styleset {
+        d100: 14;
+    }
+  }
+
+.dicier {
+    display: inline-block;
+    font-family: Dicier, monospace;
+    font-variant-alternates: styleset(d100) character-variant(dicesize);
+    font-variant-ligatures: discretionary-ligatures;
+    font-feature-settings: “liga” 1, “kern” 1, “calt” 1;
+    font-variant-numeric: slashed-zero;
+    font-size: 200%;
+    line-height: 0;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    color-scheme: dark;
+    font-family: monospace;
+    font-size: 150%;
+    accent-color: green;
+}
+
+body {
+    background-color: #222;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    display: block;
+    max-width: 100rem;
+    margin: auto;
+}
+
+h1 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+fieldset {
+    border: 1px solid #888;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: space-around;
+    margin: auto;
+}
+
+label {
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+}
+
+input[type="number"] {
+    font-family: monospace;
+    padding: 1rem;
+    text-align: center;
+    width: 5rem;
+    margin-left: 1rem;
+    font-size: 200%;
+}
+
+input[type="radio"] {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1em;
+}
+
+output {
+    display: inline-block;
+    width: 100%;
+}
+
+table {
+    text-align: right;
+    width: 100%;
+}
+
+td {
+    white-space: nowrap;
+    width: fit-content;
+    padding-left: 1rem;
+}
+
+td:last-child {
+    width: 100%;
+}
+
+th:last-child {
+    text-align: center;
+}
+
+meter {
+    width: 100%;
+    background: #111;
+}
+
+meter::-webkit-meter-bar {
+    background: #111;
+}
